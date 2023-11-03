@@ -1,17 +1,9 @@
-# CONFIG_DEFAULT_luci-app-vlmcsd=n is not set
-# CONFIG_PACKAGE_luci-app-nlbwmon=n is not set
-# CONFIG_PACKAGE_luci-app-wrtbwmon=n is not set
-#CONFIG_PACKAGE_luci-app-frpc=n is not set
-# CONFIG_PACKAGE_luci-app-frps=n is not set
-# CONFIG_PACKAGE_luci-app-turboaccn is not set
-# CONFIG_PACKAGE_luci-app-webadmin=n is not set
-# CONFIG_PACKAGE_luci-app-diskman=n is not set
+CONFIG_PACKAGE_luci-app-diskman=y
 CONFIG_TARGET_x86=y
 CONFIG_TARGET_x86_64=y
 CONFIG_TARGET_x86_64_DEVICE_generic=y
 CONFIG_DOCKER_OPTIONAL_FEATURES=y
-# CONFIG_GRUB_IMAGES is not set
-CONFIG_VMDK_IMAGES=y
+CONFIG_GRUB_IMAGES=y
 CONFIG_KERNEL_CFQ_GROUP_IOSCHED=y
 CONFIG_KERNEL_CGROUP_HUGETLB=y
 CONFIG_KERNEL_CGROUP_PERF=y
