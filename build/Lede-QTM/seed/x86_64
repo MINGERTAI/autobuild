@@ -1,22 +1,13 @@
-# 编译x64固件:
-CONFIG_TARGET_x86=y
-CONFIG_TARGET_x86_64=y
-CONFIG_TARGET_x86_64_DEVICE_generic=y
-
-# 编译UEFI固件:
-CONFIG_EFI_IMAGES=y
-# 编译GRUB固件
-#CONFIG_GRUB_IMAGES=y
-
-# 固件压缩:
-CONFIG_TARGET_IMAGES_GZIP=y
 
 # 磁盘管理磁盘信息 方便docker挂盘所用
 CONFIG_PACKAGE_luci-app-diskman=y
 
 ++++++++++++++++++++++++++++++++++++++++++++
-
+CONFIG_TARGET_x86=y
+CONFIG_TARGET_x86_64=y
+CONFIG_TARGET_x86_64_DEVICE_generic=y
 CONFIG_DOCKER_OPTIONAL_FEATURES=y
+CONFIG_GRUB_IMAGES=y
 CONFIG_KERNEL_CFQ_GROUP_IOSCHED=y
 CONFIG_KERNEL_CGROUP_HUGETLB=y
 CONFIG_KERNEL_CGROUP_PERF=y
@@ -208,32 +199,3 @@ CONFIG_boost-compile-visibility-hidden=y
 CONFIG_boost-runtime-shared=y
 CONFIG_boost-static-and-shared-libs=y
 CONFIG_boost-variant-release=y
-
-CONFIG_PACKAGE_luci-app-ttyd=y
-CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn
-
-# 多文件系统支持:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_kmod-fs-nfs=y
-# CONFIG_PACKAGE_kmod-fs-nfs-common=y
-# CONFIG_PACKAGE_kmod-fs-nfs-v3=y
-# CONFIG_PACKAGE_kmod-fs-nfs-v4=y
-# CONFIG_PACKAGE_kmod-fs-ntfs=y
-# CONFIG_PACKAGE_kmod-fs-squashfs=y
-# EOF
-
-# USB3.0支持:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_kmod-usb-ohci=y
-# CONFIG_PACKAGE_kmod-usb-ohci-pci=y
-# CONFIG_PACKAGE_kmod-usb2=y
-# CONFIG_PACKAGE_kmod-usb2-pci=y
-# CONFIG_PACKAGE_kmod-usb3=y
-# EOF
-
-# 多线多拨:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_luci-app-syncdial=y #多拨虚拟WAN
-# CONFIG_PACKAGE_luci-app-mwan3=y #MWAN负载均衡
-# CONFIG_PACKAGE_luci-app-mwan3helper=n #MWAN3分流助手
-# EOF
