@@ -19,12 +19,12 @@ export Mandatory_theme="argon"              # 将bootstrap替换您需要的主�
 export Default_theme="argon"                # 多主题时,选择某主题为默认第一主题 (填写主题名称,填0为不作修改)
 
 # 旁路由选项
-export Gateway_Settings="0"                 # 旁路由设置 IPv4 网关(填入您的网关IP为启用)(填0为不作修改)
-export DNS_Settings="0"                     # 旁路由设置 DNS(填入DNS，多个DNS要用空格分开)(填0为不作修改)
-export Broadcast_Ipv4="0"                   # 设置 IPv4 广播(填入您的IP为启用)(填0为不作修改)
-export Disable_DHCP="0"                     # 旁路由关闭DHCP功能(1为启用命令,填0为不作修改)
-export Disable_Bridge="0"                   # 旁路由去掉桥接模式(1为启用命令,填0为不作修改)
-export Create_Ipv6_Lan="0"                  # 爱快+OP双系统时,爱快接管IPV6,在OP创建IPV6的lan口接收IPV6信息(1为启用命令,填0为不作修改)
+export Gateway_Settings="192.168.0.2"                 # 旁路由设置 IPv4 网关(填入您的网关IP为启用)(填0为不作修改)
+export DNS_Settings="192.168.1.1 192.168.0.1          # 旁路由设置 DNS(填入DNS，多个DNS要用空格分开)(填0为不作修改)
+export Broadcast_Ipv4="0"                             # 设置 IPv4 广播(填入您的IP为启用)(填0为不作修改)
+export Disable_DHCP="0"                               # 旁路由关闭DHCP功能(1为启用命令,填0为不作修改)
+export Disable_Bridge="0"                             # 旁路由去掉桥接模式(1为启用命令,填0为不作修改)
+export Create_Ipv6_Lan="0"                            # 爱快+OP双系统时,爱快接管IPV6,在OP创建IPV6的lan口接收IPV6信息(1为启用命令,填0为不作修改)
 
 # IPV6、IPV4 选择
 export Enable_IPV6_function="0"             # 编译IPV6固件(1为启用命令,填0为不作修改)(如果跟Create_Ipv6_Lan一起启用命令的话,Create_Ipv6_Lan命令会自动关闭)
@@ -53,7 +53,7 @@ export AdGuardHome_Core="0"                  # 编译固件时自动增加AdGuar
 export Disable_NaiveProxy="1"                # 因个别源码的分支不支持编译NaiveProxy,不小心选择了就编译错误了,为减少错误,打开这个选项后,就算选择了NaiveProxy也会把NaiveProxy干掉不进行编译的(1为启用命令,填0为不作修改)
 
 # 开启NTFS格式盘挂载
-export Automatic_Mount_Settings="0"          # 编译时加入开启NTFS格式盘挂载的所需依赖(1为启用命令,填0为不作修改)
+export Automatic_Mount_Settings="1"          # 编译时加入开启NTFS格式盘挂载的所需依赖(1为启用命令,填0为不作修改)
 
 # 去除网络共享(autosamba)
 export Disable_autosamba="0"                 # 去掉源码默认自选的luci-app-samba或luci-app-samba4(1为启用命令,填0为不作修改)
@@ -99,16 +99,6 @@ profiles.json
 openwrt-x86-64-generic-kernel.bin
 openwrt-x86-64-generic.manifest
 openwrt-x86-64-generic-squashfs-rootfs.img.gz
-EOF
-
-### 安装 docker
-cat >".config" <<-EOF
-CONFIG_PACKAGE_docker=y
-CONFIG_PACKAGE_luci-lib-docker=y
-CONFIG_PACKAGE_luci-app-docker=y
-CONFIG_PACKAGE_luci-i18n-docker-zh-cn=y
-CONFIG_PACKAGE_luci-app-dockerman=y
-CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y
 EOF
 
 # 在线更新时，删除不想保留固件的某个文件，在EOF跟EOF之间加入删除代码，记住这里对应的是固件的文件路径，比如： rm -rf /etc/config/luci
