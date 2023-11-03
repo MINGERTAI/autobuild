@@ -101,16 +101,6 @@ openwrt-x86-64-generic.manifest
 openwrt-x86-64-generic-squashfs-rootfs.img.gz
 EOF
 
-### 安装 docker
-cat >".config" <<-EOF
-CONFIG_PACKAGE_docker=y
-CONFIG_PACKAGE_luci-lib-docker=y
-CONFIG_PACKAGE_luci-app-docker=y
-CONFIG_PACKAGE_luci-i18n-docker-zh-cn=y
-CONFIG_PACKAGE_luci-app-dockerman=y
-CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y
-EOF
-
 # 在线更新时，删除不想保留固件的某个文件，在EOF跟EOF之间加入删除代码，记住这里对应的是固件的文件路径，比如： rm -rf /etc/config/luci
 cat >>$DELETE <<-EOF
 EOF
