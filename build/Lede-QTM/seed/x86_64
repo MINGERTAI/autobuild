@@ -1,10 +1,10 @@
 CONFIG_DEFAULT_luci-app-vlmcsd=y
-CONFIG_PACKAGE_luci-app-nlbwmon=y
-CONFIG_PACKAGE_luci-app-wrtbwmon=y
+# CONFIG_PACKAGE_luci-app-nlbwmon=n is not set
+# CONFIG_PACKAGE_luci-app-wrtbwmon=n is not set
 CONFIG_PACKAGE_luci-app-frpc=y
 CONFIG_PACKAGE_luci-app-frps=y
-CONFIG_PACKAGE_luci-app-turboacc=y
-CONFIG_PACKAGE_luci-app-webadmin=y
+# CONFIG_PACKAGE_luci-app-turboaccn is not set
+# CONFIG_PACKAGE_luci-app-webadmin=n is not set
 CONFIG_TARGET_x86=y
 CONFIG_TARGET_x86_64=y
 CONFIG_TARGET_x86_64_DEVICE_generic=y
