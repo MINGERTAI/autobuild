@@ -1,5 +1,74 @@
+# OpenWrt-AutoBuild
 
+## 👍 基于OpenWrt-Actions-Lean+Lienol-自动化在线编译脚本
+目前应该是最好的自动化脚本
 
+<details>
+<summary>固件添加 docker</summary>
+<br>
+
+必须安装 ttyd  luci-app-ttyd  luci-i18n-ttyd-zh-cn 这三个
+
+docker  dockerd  luci-app-dockerman  luci-i18n-dockerman-zh-cn  luci-lib-docker
+
+首先要在Global build settings ---> Enable IPv6 support in packages (NEW)（选上）
+
+选择dockerman或docker建议选上luci-app-diskman方便挂盘所用
+
+</details>
+
+<details>
+<summary>中国大陆镜像软件源</summary>
+<br>
+openwrt官方 22.03.5
+
+配置文件地址：/etc/opkg/distfeeds.conf
+```
+src/gz openwrt_core https://downloads.openwrt.org/releases/22.03.5/targets/x86/64/packages
+src/gz openwrt_base https://downloads.openwrt.org/releases/22.03.5/packages/x86_64/base
+src/gz openwrt_luci https://downloads.openwrt.org/releases/22.03.5/packages/x86_64/luci
+src/gz openwrt_packages https://downloads.openwrt.org/releases/22.03.5/packages/x86_64/packages
+src/gz openwrt_routing https://downloads.openwrt.org/releases/22.03.5/packages/x86_64/routing
+src/gz openwrt_telephony https://downloads.openwrt.org/releases/22.03.5/packages/x86_64/telephony
+```
+中科大
+```
+src/gz openwrt_core http://mirrors.ustc.edu.cn/openwrt/releases/22.03.5/targets/x86/64/packages
+src/gz openwrt_base http://mirrors.ustc.edu.cn/openwrt/releases/22.03.5/packages/x86_64/base
+src/gz openwrt_luci http://mirrors.ustc.edu.cn/openwrt/releases/22.03.5/packages/x86_64/luci
+src/gz openwrt_packages http://mirrors.ustc.edu.cn/openwrt/releases/22.03.5/packages/x86_64/packages
+src/gz openwrt_routing http://mirrors.ustc.edu.cn/openwrt/releases/22.03.5/packages/x86_64/routing
+src/gz openwrt_telephony http://mirrors.ustc.edu.cn/openwrt/releases/22.03.5/packages/x86_64/telephony
+```
+清华大学
+```
+src/gz openwrt_core https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/22.03.5/targets/x86/64/packages
+src/gz openwrt_base https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/22.03.5/packages/x86_64/base
+src/gz openwrt_luci https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/22.03.5/packages/x86_64/luci
+src/gz openwrt_packages https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/22.03.5/packages/x86_64/packages
+src/gz openwrt_routing https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/22.03.5/packages/x86_64/routing
+src/gz openwrt_telephony https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/22.03.5/packages/x86_64/telephony
+```
+阿里云
+```
+src/gz openwrt_core https://mirrors.aliyun.com/openwrt/releases/22.03.5/targets/x86/64/packages
+src/gz openwrt_base https://mirrors.aliyun.com/openwrt/releases/22.03.5/packages/x86_64/base
+src/gz openwrt_luci https://mirrors.aliyun.com/openwrt/releases/22.03.5/packages/x86_64/luci
+src/gz openwrt_packages https://mirrors.aliyun.com/openwrt/releases/22.03.5/packages/x86_64/packages
+src/gz openwrt_routing https://mirrors.aliyun.com/openwrt/releases/22.03.5/packages/x86_64/routing
+src/gz openwrt_telephony https://mirrors.aliyun.com/openwrt/releases/22.03.5/packages/x86_64/telephony
+```
+腾讯云
+```
+src/gz openwrt_core https://mirrors.cloud.tencent.com/openwrt/releases/22.03.5/targets/x86/64/packages
+src/gz openwrt_base https://mirrors.cloud.tencent.com/openwrt/releases/22.03.5/packages/x86_64/base
+src/gz openwrt_luci https://mirrors.cloud.tencent.com/openwrt/releases/22.03.5/packages/x86_64/luci
+src/gz openwrt_packages https://mirrors.cloud.tencent.com/openwrt/releases/22.03.5/packages/x86_64/packages
+src/gz openwrt_routing https://mirrors.cloud.tencent.com/openwrt/releases/22.03.5/packages/x86_64/routing
+src/gz openwrt_telephony https://mirrors.cloud.tencent.com/openwrt/releases/22.03.5/packages/x86_64/telephony
+```
+<br/>
+</details>
 
 ---
 
@@ -141,6 +210,24 @@ CONFIG_TARGET_armsr_armv8_DEVICE_generic=y
 
 <br />
 </details>
+
+---
+
+##### ONE 固件更新下载:
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/db-one/OpenWrt-AutoBuild?style=for-the-badge&label=固件更新下载)](https://github.com/db-one/OpenWrt-AutoBuild/releases)
+
+##### zhusir 固件更新下载:
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/smallprogram/OpenWrtAction?style=for-the-badge&label=固件更新下载)](https://github.com/smallprogram/OpenWrtAction/releases)
+
+##### 源码和脚本来自
+
+- [Lean](https://github.com/coolsnowwolf/lede)
+- [ Lienol](https://github.com/Lienol/openwrt )
+- [ xiaorouji package](https://github.com/xiaorouji/openwrt-passwall)
+- [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
+- [281677160](https://github.com/281677160)
+- [gd-772](https://github.com/gd0772)
+- [openwrt-package](https://github.com/MINGERTAI/openwrt-package)
 
 ---
 
