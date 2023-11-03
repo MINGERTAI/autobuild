@@ -15,8 +15,8 @@ CONFIG_TARGET_IMAGES_GZIP=y
 CONFIG_PACKAGE_luci-app-diskman=y
 
 # IPv6支持:
-CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-CONFIG_PACKAGE_ipv6helper=y
+#CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+#CONFIG_PACKAGE_ipv6helper=y
 
 # 编译PVE/KVM、Hyper-V、VMware镜像以及镜像填充
 #CONFIG_QCOW2_IMAGES=n
